@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Invoice</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Optional custom styles */
+    /* Add your custom CSS here */
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  {{> header}}
+    
+  <div class="container mt-4">
+    <h2>Insert a New Invoice</h2>
+    <form method="post" action="/invoices">
+      <div class="form-group">
+        <label for="InvoiceID">Invoice ID:</label>
+        <input type="text" class="form-control" name="InvoiceID" required>
+      </div>
+      <div class="form-group">
+        <label for="Branch">Branch:</label>
+        <input type="text" class="form-control" name="Branch" required>
+      </div>
+      <div class="form-group">
+        <label for="City">City:</label>
+        <input type="text" class="form-control" name="City" required>
+      </div>
+      <div class="form-group">
+        <label for="Customertype">Customer Type:</label>
+        <input type="text" class="form-control" name="Customertype" required>
+      </div>
+      <div class="form-group">
+        <label for="Productline">Product Line:</label>
+        <input type="text" class="form-control" name="Productline" required>
+      </div>
+      <div class="form-group">
+        <label for="name">Product Name:</label>
+        <input type="text" class="form-control" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="image">Image URL:</label>
+        <input type="text" class="form-control" name="image" required>
+      </div>
+      <div class="form-group">
+        <label for="Unitprice">Unit Price:</label>
+        <input type="number" class="form-control" name="Unitprice" required>
+      </div>
+      <div class="form-group">
+        <label for="Quantity">Quantity:</label>
+        <input type="number" class="form-control" name="Quantity" required>
+      </div>
+      <div class="form-group">
+        <label for="Tax5">Tax 5%:</label>
+        <input type="number" class="form-control" name="Tax5" required>
+      </div>
+      <div class="form-group">
+        <label for="Total">Total:</label>
+        <input type="number" class="form-control" name="Total" required>
+      </div>
+      <div class="form-group">
+        <label for="Date">Date:</label>
+        <input type="text" class="form-control" name="Date" required>
+      </div>
+      <div class="form-group">
+        <label for="Time">Time:</label>
+        <input type="text" class="form-control" name="Time" required>
+      </div>
+      <div class="form-group">
+        <label for="Payment">Payment Method:</label>
+        <input type="text" class="form-control" name="Payment" required>
+      </div>
+      <div class="form-group">
+        <label for="cogs">COGS:</label>
+        <input type="number" class="form-control" name="cogs" required>
+      </div>
+      <div class="form-group">
+        <label for="grossincome">Gross Income:</label>
+        <input type="number" class="form-control" name="grossincome" required>
+      </div>
+      <div class="form-group">
+        <label for="Rating">Rating:</label>
+        <input type="number" class="form-control" name="Rating" required>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Insert Invoice</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  {{> footer}}
+
+  <!-- Bootstrap JS and dependencies (placed at the end of the body for faster page load) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

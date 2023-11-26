@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  {{> header}}
+
+<h1>Sales Data</h1>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                {{!-- <th>Number</th> --}}
+                
+                <th> Index</th>
+      
+                <th>Invoice ID</th>
+                <th>Branch</th>
+                <th>City</th>
+                <th>Customer Type</th>
+                <th>Product Line</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Tax 5%</th>
+                <th>Total</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Payment</th>
+                <th>COGS</th>
+                <th>Gross Income</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each salesData}}
+            
+            <tr>
+                <td>{{ @index}}</td>
+                  <td>{{ getProperty this "Invoice ID" }}</td>
+                <td>{{ this.Branch }}</td>
+                <td>{{this.City}}</td> 
+                  <td>{{ getProperty this "Customer type" }}</td>
+                  <td>{{ getProperty this "Product line" }}</td>
+                
+                <td>{{this.name}}</td>
+                <td><img src="{{this.image}}" alt="Product Image" width="100"></td>
+                  <td>{{ getProperty this "Unit price" }}</td>
+                <td>{{this.Quantity}}</td>
+                  <td>{{ getProperty this "Tax 5%" }}</td>
+                
+                {{!-- <td>{{this "Tax 5%"}}</td> --}}
+                <td>{{this.Total}}</td>
+                <td>{{this.Date}}</td>
+                <td>{{this.Time}}</td>
+                <td>{{this.Payment}}</td>
+                <td>{{this.cogs}}</td>
+                  <td>{{ getProperty this "gross income" }}</td>
+
+                {{!-- <td>{{this "gross income"}}</td> --}}
+                <td>{{this.Rating}}</td>
+                <td>
+                <form action="/deleteinvoice/{{this._id}}" method="POST">
+  <div class="d-inline-block">
+    <input type="hidden" name="_method" value="DELETE">
+    <button type="submit" class="btn btn-danger">Delete</button>
+  </div>
+</form>
+                </td> 
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+{{> footer}}
+
+
+</body>
+</html>
+
