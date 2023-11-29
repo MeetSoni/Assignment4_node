@@ -1,6 +1,6 @@
 /*** Add to config/database.js ***/
 module.exports = {
-    url : "mongodb://127.0.0.1:27017/ASN4_Q2"
+    url : "mongodb+srv://admin:admin%40123@cluster0.3cfsn76.mongodb.net/ASN4_Q2"
 };
 
 
